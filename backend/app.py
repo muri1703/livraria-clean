@@ -7,9 +7,5 @@ CORS(app)
 
 app.register_blueprint(livro_bp)
 
-@app.route("/")
-def home():
-    return "API da Livraria funcionando"
-
 if __name__ == "__main__":
     app.run(debug=True)
