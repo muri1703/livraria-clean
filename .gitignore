@@ -1,4 +1,5 @@
 # Python
+venv/
 backend/venv/
 __pycache__/
 *.pyc
@@ -13,3 +14,9 @@ dist/
 
 # Logs
 *.log
+
+# Sistema
+.DS_Store
+
+backend/repositories/
+backend/services/
