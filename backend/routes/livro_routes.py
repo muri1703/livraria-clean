@@ -1,21 +1,7 @@
-from flask import request, jsonify
-from usecases.livro_usecase import LivroUseCase
-from infrastructure.livro_repository_txt import LivroRepositoryTXT
+from flask import Blueprint
+from controllers.livro_controller import get_livros, get_livro
 
-repo = LivroRepositoryTXT()
-usecase = LivroUseCase(repo)
+livro_bp = Blueprint("livros", __name__)
 
-def get_livros():
-    query = request.args.get("q")
-    preco_min = request.args.get("preco_min")
-
-    livros = usecase.listar_livros(query, preco_min)
-    return jsonify([l.to_dict() for l in livros])
-
-
-def get_livro(id):
-    livro = usecase.buscar_por_id(id)
-
-    if livro:
-        return jsonify(livro.to_dict())
-    return jsonify({"erro": "Livro não encontrado"}), 404
+livro_bp.route("/livros", methods=["GET"])(get_livros)
+livro_bp.route("/livros/<int:id>", methods=["GET"])(get_livro)
