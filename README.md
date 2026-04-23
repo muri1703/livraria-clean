@@ -1,33 +1,24 @@
-# Livraria - Arquitetura Multicamadas
+## Arquitetura Clean
 
-Projeto desenvolvido para a disciplina de Engenharia de Software.
+Este projeto foi refatorado para Clean Architecture, garantindo:
 
-## Tecnologias
-- Backend: Python (Flask)
-- Frontend: React + Vite + Tailwind
-
-## Arquitetura
-O sistema foi refatorado para arquitetura multicamada:
-
-- Routes
-- Controllers
-- Services
-- Repositories
-
-## Funcionalidades
-- Listagem de livros
-- Busca por nome, autor e gênero
-- Filtro por preço mínimo
-- Página de detalhes do livro
+- Separação clara entre domínio, casos de uso e infraestrutura
+- Aplicação do princípio DIP (Dependency Inversion Principle)
+- Persistência desacoplada utilizando arquivo TXT
+- Backend independente de tecnologia de banco de dados
 
 ## Como rodar
 
 ### Backend
 cd backend
+
 venv\Scripts\activate
+
 python app.py
 
 ### Frontend
 cd frontend
+
 npm install
+
 npm run dev
